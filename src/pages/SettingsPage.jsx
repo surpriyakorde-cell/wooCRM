@@ -1,0 +1,6 @@
+import { ShoppingBag, Sparkles } from 'lucide-react';
+import PageHeading from '../components/PageHeading.jsx';
+
+export default function SettingsPage({ mode, notify }) {
+  return <section><PageHeading eyebrow="PREFERENCES" title="Settings" subtitle="Manage your store connection and workspace."/><div className="settings-grid"><div className="setting-card"><div className="setting-icon"><ShoppingBag size={20}/></div><h3>WooCommerce connection</h3><p>{mode === 'live' ? 'Your store data is being loaded from WooCommerce.' : 'The app is currently using sample data. Configure the backend environment variables to connect a store.'}</p><span className={`connection-pill ${mode}`}><span className="status-dot"/>{mode === 'live' ? 'Connected' : 'Demo mode'}</span><div className="settings-note">Set WOOCOMMERCE_STORE_URL, WOOCOMMERCE_CONSUMER_KEY, and WOOCOMMERCE_CONSUMER_SECRET in your backend .env file.</div></div><div className="setting-card"><div className="setting-icon"><Sparkles size={20}/></div><h3>Customer insights</h3><p>Use purchase history to guide thoughtful follow-ups. This starter uses simple recommendations and does not call an AI model.</p><button className="secondary-btn" onClick={() => notify('Insight: prioritize repeat buyers and pending orders.')}>Generate sample insight</button></div></div></section>;
+}

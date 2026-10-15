@@ -1,0 +1,51 @@
+{
+  "customers": {
+    "101": {
+      "status": "Lead"
+    }
+  },
+  "reviews": [
+    {
+      "id": "demo-r1",
+      "customer_id": 102,
+      "customer": "Meera Naik",
+      "rating": 2,
+      "text": "The delivery took longer than expected and tracking did not update for several days.",
+      "date": "2026-10-14",
+      "status": "Reviewed",
+      "demo": true
+    },
+    {
+      "id": "demo-r2",
+      "customer_id": 103,
+      "customer": "Kabir Fernandes",
+      "rating": 5,
+      "text": "Great quality and a smooth checkout. I will order again.",
+      "date": "2026-10-12",
+      "status": "Reviewed",
+      "demo": true
+    },
+    {
+      "id": "demo-r3",
+      "customer_id": 105,
+      "customer": "Rehan Khan",
+      "rating": 3,
+      "text": "Product is good, but the packaging arrived damaged.",
+      "date": "2026-10-10",
+      "status": "New",
+      "demo": true
+    },
+    {
+      "id": "demo-r4",
+      "customer_id": 101,
+      "customer": "Aarav Shah",
+      "rating": 4,
+      "text": "Helpful support team and a good overall experience.",
+      "date": "2026-10-08",
+      "status": "Resolved",
+      "demo": true
+    }
+  ],
+  "notes": {},
+  "tasks": []
+}

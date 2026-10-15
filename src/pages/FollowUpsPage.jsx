@@ -1,0 +1,6 @@
+import { Check, Clock3, Plus } from 'lucide-react';
+import PageHeading from '../components/PageHeading.jsx';
+
+export default function FollowUpsPage({ tasks, setTasks, setShowTask }) {
+  return <section><PageHeading eyebrow="CUSTOMER SUCCESS" title="Follow-ups" subtitle="Small, thoughtful touchpoints build lasting relationships." action={<button className="primary-btn" onClick={() => setShowTask(true)}><Plus size={16}/> New follow-up</button>}/><div className="task-list">{tasks.map(t => <div className="task-row" key={t.id}><button aria-label={`${t.status==='Completed'?'Reopen':'Complete'} ${t.title}`} className={`task-check ${t.status === 'Completed' ? 'checked' : ''}`} onClick={() => setTasks(prev => prev.map(x => x.id === t.id ? {...x, status: x.status === 'Completed' ? 'Pending' : 'Completed'} : x))}>{t.status === 'Completed' && <Check size={14}/>}</button><div className="task-main"><strong className={t.status === 'Completed' ? 'task-done' : ''}>{t.title}</strong><span>{t.customer}</span></div><span className="task-due"><Clock3 size={14}/>{t.due}</span><span className={`status-badge ${t.status === 'Completed' ? 'completed' : 'pending'}`}>{t.status}</span></div>)}</div></section>;
+}
